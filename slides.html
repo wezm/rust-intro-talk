@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rust Introduction</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'PragmataPro'; }
+      .remark-slide-content { background-color: #1d1f21; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Rust Intro
+
+---
+
+# Agenda
+
+1. Introduction
+2. Demo
+3. Questions
+
+---
+
+# Introduction
+
+```
+fn main() {
+  println!("Rust Introduction");
+}
+```
+
+> **Rust** is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. 
+
+— [rust-lang.org](https://www.rust-lang.org/)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({highlightStyle: 'tomorrow-night', highlightLanguage: 'rust'});
+    </script>
+  </body>
+</html>
