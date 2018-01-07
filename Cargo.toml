@@ -4,4 +4,9 @@ version = "0.1.0"
 authors = ["Wesley Moore <wes@wezm.net>"]
 
 [dependencies]
-walkdir = "2.0"
+
+[build-dependencies]
+skeptic = "0.13"
+
+[dev-dependencies]
+skeptic = "0.13"

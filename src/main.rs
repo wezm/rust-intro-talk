@@ -1,5 +1,3 @@
-extern crate walkdir;
-
 use std::path::Path;
 use std::env;
 use std::fmt;

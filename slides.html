@@ -16,42 +16,33 @@
       }
       .remark-code, .remark-inline-code { font-family: 'PragmataPro'; }
       .remark-slide-content { color: #eee; background-color: #1d1f21; }
+      blockquote {
+        border-left: 0.2em solid currentColor;
+        padding-left: 1em;
+        margin-left: 0.5em;
+      }
+      a {
+        color: lightblue;
+      }
+      .indent {
+        margin-left: 0.5em;
+      }
+      img {
+        max-width: 100%;
+      }
     </style>
   </head>
   <body>
     <textarea id="source">
-
-class: center, middle
-
-# Rust Intro
-
----
-
-# Agenda
-
-1. Introduction
-2. Demo
-3. Questions
-
----
-
-# Introduction
-
-```
-fn main() {
-  println!("Rust Introduction");
-}
-```
-
-> **Rust** is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. 
-
-— [rust-lang.org](https://www.rust-lang.org/)
-
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    <script src="remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create({highlightStyle: 'tomorrow-night', highlightLanguage: 'rust'});
+      var slideshow = remark.create({
+        sourceUrl: 'slides.md',
+        highlightStyle: 'tomorrow-night',
+        ratio: '16:9',
+      });
     </script>
   </body>
 </html>
