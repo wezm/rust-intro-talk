@@ -11,3 +11,25 @@ fn main() {{
   {}
 }}
 ```
+
+```rust,skt-type-demo
+{}
+
+fn main() {{
+}}
+```
+
+```rust,skt-serial
+enum SerialProtocol {{
+    Usb,
+    Rs485,
+    Rs232,
+    I2C,
+    Spi,
+}}
+
+{}
+
+fn main() {{
+}}
+```

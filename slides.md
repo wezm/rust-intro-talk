@@ -1,6 +1,14 @@
-class: center, middle
+class: center, middle, ferris
 
-# Rust Intro
+![Ferris the Rustacean animation](images/ferris.gif)
+
+Rust Introduction
+=================
+
+Wesley Moore
+------------
+
+### 12 Jan 2018
 
 ---
 
@@ -38,11 +46,11 @@ fn main() {
 
 # Prevents Segfaults
 
-* No `NULL`, `nil` or other [billion dollar mistakes][billion-dollar-mistake]
-
-This is not a thing. At all. Ever.
+* No `NULL`, `nil` or other [billion dollar mistakes][billion-dollar-mistake].
 
 ![undefined method for nil:NilClass](images/undefined-method-nil.png)
+
+This is not a thing. At all. Ever.
 
 .center[[billion-dollar-mistake]: https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare]
 
@@ -50,35 +58,69 @@ This is not a thing. At all. Ever.
 
 # Guarantees Thread Safety
 
-* Ownership model tracks owener and lifetime of memory
-* No data races: Compiler knows which thread owns what data
-* This leads to, "Fearless Concurrency"
+* Ownership model tracks owner and lifetime of memory.
+* No data races: Compiler knows which thread owns what data.
+* This leads to, "Fearless Concurrency".
 
 ---
 
 # Strong Type System
 
+Mostly the same as other languages. No need to learn an entirely new paradigm.
+
 * Not object oriented
 * Trait based generics
+* Uses traits (like interfaces) to collect related behaviour and avoid the need for inheritance.
 * Type inference
   * Function definitiions must have types
+* Refactor with impunity
 
-* Integers: `i32`, `u32`, `i64`, `u64`, `isize`, `usize`
-* Floating point: `f32`, `f64`
-* `String`/`str`
+---
+
+# Tooling
+
+Official distribution includes:
+
+* `cargo`
+  * build tool (no Makefiles)
+  * package manager (like bundler)
+  * test runner
+  * documentation generator
+
+## Releases
+
+Generally managed with `rustup`:
+
+* Official toolchain manager (like rbenv)
+* New releases every 6 weeks
+  * Commited to backwards compatibility for every release.
+
+---
+
+class: crates
+
+# Crates
+
+* Rust favours a small, stable standard library.
+* Crates are the equivalient of Ruby gems. They are published to
+  [crates.io](https://crates.io/).
+
+![screenshot of crates.io](images/crates-io.png)
+
+---
 
 # Syntax — Variables (Bindings)
 
-Let bindings are mutable by default
+`let` bindings are mutable by default.
 
 ```rust,skt-basic-main
 let number = 42; // immutable
-let mut sum = 0; // mutable
+let mut total = 0; // mutable
 ```
 
 ---
 
-# Syntax - Functions
+# Syntax — Functions
 
 ```rust
 fn average(values: &[i32]) -> i32 {
@@ -92,7 +134,7 @@ fn main() {
 
 ---
 
-# Syntax - Conditionals
+# Syntax — Conditionals: If
 
 ```rust,skt-basic-main
 let mut airconditioner;
@@ -106,32 +148,61 @@ else {
 }
 ```
 
---
+---
 
-# Syntax - Loops
+# Syntax — Conditionals: Match
+
+Can match structure and values:
+
+```rust,skt-basic-main
+let month = "jan";
+
+match month {
+    "jan" => 1,
+    "feb" => 2,
+    "mar" => 3,
+    "apr" => 4,
+    "may" => 5,
+    "jun" => 6,
+    "jul" => 7,
+    "aug" => 8,
+    "sep" => 9,
+    "oct" => 10,
+    "nov" => 11,
+    "dec" => 12,
+    _     => panic!("invalid month"),
+};
+
+```
 
 
 ---
 
-# 
+# Syntax — Loops
 
----
+```rust,skt-basic-main
+let numbers = [1,2,3];
 
-# Standard Tooling
+for i in numbers.iter() {
+    // do something
+}
 
-* official distribution includes:
-* `cargo` build tool (like bundler, no Makefiles)
-* built in support for tests
-* built in suppoprt for Markdown based documentation
-* `rustup` toolchain manager (like rbenv)
+for i in 0..10 {
+    // do something
+}
 
-# Syntax & Concepts
+loop {
+    // do something
 
-Mostly the same as other languages. No need to learn an entirely new paradigm.
+    if numbers.len() > 2 {
+      break;
+    }
+}
 
-* Not object oriented
-* Uses traits (like interfaces) to collect related behaviour and avoid the need for inheritance.
-* Variables are immutable by default
+while numbers.len() < 2 {
+    // do something
+}
+```
 
 ---
 
@@ -161,4 +232,79 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 }
 ```
 
+---
 
+# Syntax — enums
+
+Type that represents one possibility of several variants. Variants may optionally
+carry data.
+
+```rust,skt-type-demo
+enum SerialProtocol {
+    Usb,
+    Rs485,
+    Rs232,
+    I2C,
+    Spi,
+}
+```
+
+---
+
+# Syntax — structs
+
+Type that carries structured data.
+
+```rust,skt-serial
+struct Person {
+    name: String,
+    age: i32,
+    favourite_serial_protocol: SerialProtocol,
+}
+```
+
+---
+
+# Option
+
+Insead of `nil`/`NULL` we have `Option`.
+
+* Used to represent something that may be absent.
+* An enum that that looks like this:
+
+```rust,skt-type-demo
+enum Option<T> {
+    Some(T),
+    None
+}
+```
+
+---
+
+# Result
+
+When something can succeed or fail with an error. There are no exceptions in
+Rust, `Result` is how you handle errors.
+
+* An enum that that looks like this:
+
+```rust,skt-type-demo
+enum Result<T, E> {
+    Ok(T),
+    Err(E)
+}
+```
+
+---
+
+class: center, middle
+
+Demo
+====
+
+---
+
+class: center, middle
+
+Questions?
+==========
