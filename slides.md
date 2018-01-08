@@ -71,16 +71,44 @@ This is not a thing. At all. Ever.
 
 Let bindings are mutable by default
 
-```rust
+```rust,skt-basic-main
 let number = 42; // immutable
 let mut sum = 0; // mutable
 ```
 
+---
+
 # Syntax - Functions
 
 ```rust
+fn average(values: &[i32]) -> i32 {
+    values.iter().sum::<i32>() / values.len() as i32
+}
+
+fn main() {
+    average(&[1,2,3,4,5]);
+}
 ```
 
+---
+
+# Syntax - Conditionals
+
+```rust,skt-basic-main
+let mut airconditioner;
+let temperature: i32 = 42;
+
+if temperature > 35 {
+    airconditioner = true;
+}
+else {
+    airconditioner = false;
+}
+```
+
+--
+
+# Syntax - Loops
 
 
 ---
