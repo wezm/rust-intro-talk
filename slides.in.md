@@ -37,19 +37,28 @@ fn main() {
 
 # Systems Programming Language
 
-* Compiles to native code
+* Compiles to native code.
 
 --
 
-* Originally imagined for the types of problems C and C++ are used to solve.
+* Aims to solve the same sorts of problems that C and C++ are used to solve but
+  with improved saftey.
 
 --
 
-* Is seeing use outside that:
-  * Embedded systems
+* Also seeing use in:
+
+--
+
+  * Embedded systems (microcontrollers)
+
+--
+
   * Operating systems ([Redox OS][redox])
-  * Web servers, applications, and compilation to web assembly
-  * GUI applications
+
+--
+
+  * Web (front and backend)
 
 ---
 
@@ -59,15 +68,12 @@ fn main() {
 
 --
 
-* Same ballpark as C and C++.
+* Similar performance as C and C++.
+  * Sometimes a bit faster, sometimes a bit slower.
 
 --
 
 * Memory safety without garbage collection.
-
---
-
-* Strong, statically typed language with an emphasis on safety and correctness.
 
 --
 
@@ -90,6 +96,10 @@ This is not a thing. At all. Ever.
 ---
 
 # Guarantees Thread Safety
+
+* Strong, statically typed with an emphasis on safety and correctness.
+
+--
 
 * Ownership model tracks owner and lifetime of memory.
 
@@ -141,19 +151,19 @@ Official distribution includes: `cargo`
 --
 :
 
-* build tool (no Makefiles)
+* Build tool (no Makefiles)
 
 --
 
-* package manager (like bundler)
+* Package manager (like bundler)
 
 --
 
-* test runner
+* Test runner
 
 --
 
-* documentation generator
+* Documentation generator
 
 ---
 
@@ -168,7 +178,7 @@ Generally managed with `rustup`
 --
 
 * New releases every 6 weeks
-  * Committed to backwards compatibility for every release.
+  * Committed to backwards compatibility in every release.
 
 ---
 
@@ -193,7 +203,7 @@ Concepts
 
 # Variables (Bindings)
 
-`let` bindings are mutable by default.
+`let` bindings are immutable by default.
 
 ```rust,skt-basic-main
 let number = 42; // immutable
@@ -383,13 +393,6 @@ enum Result<T, E> {
     Err(E)
 }
 ```
-
----
-
-class: center, middle, bigger
-
-Demo
-====
 
 ---
 
