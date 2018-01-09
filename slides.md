@@ -1,6 +1,5 @@
 class: center, middle, ferris
 
-![Ferris the Rustacean animation](images/ferris.gif)
 
 Rust Introduction
 =================
@@ -8,15 +7,17 @@ Rust Introduction
 Wesley Moore
 ------------
 
-### 12 Jan 2018
+![Ferris the Rustacean animation](images/ferris.gif)
 
 ---
 
 # Agenda
 
-1. Introduction
-2. Demo
-3. Questions
+1. Features
+2. Tooling
+3. Syntax
+4. Demo
+5. Questions
 
 ---
 
@@ -30,7 +31,7 @@ fn main() {
 
 > **Rust** is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. 
 
-.indent[— [rust-lang.org](https://www.rust-lang.org/)]
+— [rust-lang.org](https://www.rust-lang.org/)
 
 ---
 
@@ -43,6 +44,8 @@ fn main() {
 * No runtime
 
 ---
+
+class: segfaults
 
 # Prevents Segfaults
 
@@ -64,16 +67,26 @@ This is not a thing. At all. Ever.
 
 ---
 
-# Strong Type System
+# Strong Static Type System
 
-Mostly the same as other languages. No need to learn an entirely new paradigm.
+* Do more at compile time, so fewer checks required at run time
 
-* Not object oriented
-* Trait based generics
-* Uses traits (like interfaces) to collect related behaviour and avoid the need for inheritance.
-* Type inference
-  * Function definitiions must have types
-* Refactor with impunity
+--
+
+* Concepts mostly the same as other languages. No need to learn an entirely new paradigm.
+
+--
+
+* Traits and generics instead of objects and inheritance.
+
+--
+
+* Type inference reduces the need to specifiy types.
+  * Function definitions must have types makes reading and understanding code easier.
+
+--
+
+* Refactor with impunity.
 
 ---
 
@@ -86,6 +99,8 @@ Official distribution includes:
   * package manager (like bundler)
   * test runner
   * documentation generator
+
+---
 
 ## Releases
 
@@ -109,7 +124,14 @@ class: crates
 
 ---
 
-# Syntax — Variables (Bindings)
+class: center, middle
+
+Syntax
+======
+
+---
+
+#  Variables (Bindings)
 
 `let` bindings are mutable by default.
 
@@ -120,7 +142,7 @@ let mut total = 0; // mutable
 
 ---
 
-# Syntax — Functions
+#  Functions
 
 ```rust
 fn average(values: &[i32]) -> i32 {
@@ -134,7 +156,7 @@ fn main() {
 
 ---
 
-# Syntax — Conditionals: If
+#  Conditionals: If
 
 ```rust,skt-basic-main
 let mut airconditioner;
@@ -150,7 +172,7 @@ else {
 
 ---
 
-# Syntax — Conditionals: Match
+#  Conditionals: Match
 
 Can match structure and values:
 
@@ -178,7 +200,7 @@ match month {
 
 ---
 
-# Syntax — Loops
+#  Loops
 
 ```rust,skt-basic-main
 let numbers = [1,2,3];
@@ -234,7 +256,7 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 
 ---
 
-# Syntax — enums
+#  enums
 
 Type that represents one possibility of several variants. Variants may optionally
 carry data.
@@ -251,7 +273,7 @@ enum SerialProtocol {
 
 ---
 
-# Syntax — structs
+#  structs
 
 Type that carries structured data.
 
@@ -308,3 +330,16 @@ class: center, middle
 
 Questions?
 ==========
+
+---
+
+Credits
+=======
+
+* Portions of this talk were derived from [A Very Brief Intro to Rust][rust-intro]  
+  Copyright (c) 2016 Ashley Williams
+* [Animated Ferris][animated-ferris] by A. L. Palmer, via [rustacean.net][rustacean].
+
+[rust-intro]: https://github.com/rustbridge/a-very-brief-intro-to-rust
+[animated-ferris]: https://www.behance.net/gallery/42774743/Rustacean
+[rustacean]: http://rustacean.net/

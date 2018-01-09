@@ -14,7 +14,10 @@
         font-family: 'Yanone Kaffeesatz', sans-serif;
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { font-family: 'PragmataPro'; }
+      .remark-code, .remark-inline-code {
+        font-family: 'PragmataPro';
+        font-size: 32px;
+      }
       .remark-slide-content {
         color: #eee;
         background-color: #1d1f21;
@@ -26,9 +29,15 @@
         font-size: 70px;
         margin: 0.25em 0 0.5em;
       }
+      .remark-slide-content li {
+        margin: 0.5em 0;
+      }
       blockquote {
         border-left: 0.2em solid currentColor;
         padding-left: 1em;
+        margin-left: 0.5em;
+      }
+      blockquote + p {
         margin-left: 0.5em;
       }
       a {
@@ -36,9 +45,6 @@
       }
       img {
         max-width: 100%;
-      }
-      .indent {
-        margin-left: 0.5em;
       }
       .ferris {
         background-color: #232323;
@@ -52,6 +58,11 @@
       .ferris h2,
       .ferris h3 {
         z-index: 1;
+      }
+      .segfaults img {
+        display: block;
+        max-width: 95%;
+        margin: 0 auto;
       }
       .crates img {
         display: block;
@@ -70,6 +81,7 @@
         sourceUrl: 'slides.md',
         highlightStyle: 'tomorrow-night',
         ratio: '16:9',
+        countIncrementalSlides: true,
       });
     </script>
   </body>
