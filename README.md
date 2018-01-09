@@ -11,6 +11,7 @@
         xrandr --addmode eDP-1 1360x768 # if needed
         xrandr --output eDP-1 --set audio force-dvi --mode 1360x768
         xrandr --output DP-1 --set audio force-dvi --mode 1360x768
+        # Ensure xbanish is working
 
 2. Disable notifications.
 3. `simplescreenrecorder` running.
