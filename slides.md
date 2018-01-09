@@ -1,6 +1,5 @@
 class: center, middle, ferris
 
-
 Rust Introduction
 =================
 
@@ -29,15 +28,34 @@ fn main() {
 }
 ```
 
-> **Rust** is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. 
+> **Rust** is a systems programming language that runs blazingly fast, prevents
+> segfaults, and guarantees thread safety. 
 
 — [rust-lang.org](https://www.rust-lang.org/)
 
 ---
 
+# Systems Programming Language
+
+* Compiles to native code
+
+--
+
+* Originally imagined for the types of problems C and C++ are used to solve.
+
+--
+
+* Is seeing use outside that:
+  * Embedded systems
+  * Operating systems ([Redox OS][redox])
+  * Web servers, applications, and compilation to web assembly
+  * GUI applications
+
+---
+
 # Runs Blazingly Fast
 
-* Complies to native code.
+* Native code, no interpreter.
 
 --
 
@@ -81,7 +99,13 @@ This is not a thing. At all. Ever.
 
 --
 
-* This leads to, "Fearless Concurrency".
+* This leads to, "[Fearless Concurrency][fearless-concurrency]".
+
+> Mozilla made two previous attempts to parallelize its style system in C++,
+> and both of them failed. But Rust’s fearless concurrency has made parallelism
+> practical!
+
+— [Fearless Concurrency in Firefox Quantum](https://blog.rust-lang.org/2017/11/14/Fearless-Concurrency-In-Firefox-Quantum.html) (Nov 2017)
 
 ---
 
@@ -113,9 +137,7 @@ class: refactor
 
 # Tooling
 
-Official distribution includes:
-
-`cargo`
+Official distribution includes: `cargo`
 --
 :
 
@@ -169,7 +191,7 @@ Syntax
 
 ---
 
-#  Variables (Bindings)
+# Variables (Bindings)
 
 `let` bindings are mutable by default.
 
@@ -180,7 +202,7 @@ let mut total = 0; // mutable
 
 ---
 
-#  Functions
+# Functions
 
 ```rust
 fn average(values: &[i32]) -> i32 {
@@ -194,10 +216,10 @@ fn main() {
 
 ---
 
-#  Conditionals: If
+# Conditionals: if
 
 ```rust,skt-basic-main
-let mut airconditioner;
+let airconditioner;
 let temperature: i32 = 42;
 
 if temperature > 35 {
@@ -210,7 +232,7 @@ else {
 
 ---
 
-#  Conditionals: Match
+# Conditionals: match
 
 Can match structure and values:
 
@@ -232,7 +254,7 @@ match month {
 
 ---
 
-#  Loops
+# Loops
 
 ```rust,skt-basic-main
 let numbers = [1,2,3];
@@ -270,8 +292,6 @@ while numbers.len() < 2 {
 
 # Functional or Imperative
 
-You pay _no cost_ for using the higher level style.
-
 ```rust,skt-var-mean
 fn variance_mean(data: &[f64], mean: f64) -> f64 {
     let mut sum = 0.;
@@ -288,8 +308,6 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 
 # Functional or Imperative
 
-Compiles the identical machine code (I checked) as:
-
 ```rust,skt-var-mean
 fn variance_mean(data: &[f64], mean: f64) -> f64 {
     data.into_iter()
@@ -298,9 +316,13 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 }
 ```
 
+--
+
+You pay _no cost_ for using the higher level style, it compiles the identical machine code (I checked).
+
 ---
 
-#  enums
+# enums
 
 Type that represents one possibility of several variants. Variants may optionally
 carry data.
@@ -317,7 +339,7 @@ enum SerialProtocol {
 
 ---
 
-#  structs
+# structs
 
 Type that carries structured data.
 
@@ -390,6 +412,13 @@ Ruby: src/somefile.rb
 
 class: center, middle
 
+Demo
+====
+
+---
+
+class: center, middle
+
 Questions?
 ==========
 
@@ -407,3 +436,5 @@ Credits
 [animated-ferris]: https://www.behance.net/gallery/42774743/Rustacean
 [rustacean]: http://rustacean.net/
 [all-the-things]: https://hyperboleandahalf.blogspot.com.au/2010/06/this-is-why-ill-never-be-adult.html
+[fearless-concurrency]: https://doc.rust-lang.org/book/second-edition/ch16-00-concurrency.html
+[redox]: https://www.redox-os.org/
