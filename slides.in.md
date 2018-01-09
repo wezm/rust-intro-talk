@@ -195,7 +195,7 @@ Concepts
 
 `let` bindings are mutable by default.
 
-```rust
+```rust,skt-basic-main
 let number = 42; // immutable
 let mut total = 0; // mutable
 ```
@@ -218,7 +218,7 @@ fn main() {
 
 # Conditionals: if
 
-```rust
+```rust,skt-basic-main
 let airconditioner;
 let temperature: i32 = 42;
 
@@ -236,7 +236,7 @@ else {
 
 Can match structure and values:
 
-```rust
+```rust,skt-basic-main
 let month = "jan";
 
 match month {
@@ -256,7 +256,7 @@ match month {
 
 # Loops
 
-```rust
+```rust,skt-basic-main
 let numbers = [1,2,3];
 
 for i in numbers.iter() {
@@ -272,7 +272,7 @@ for i in 0..10 {
 
 # Loops
 
-```rust
+```rust,skt-basic-main
 let numbers = [1,2,3];
 
 loop {
@@ -292,7 +292,7 @@ while numbers.len() < 2 {
 
 # Functional or Imperative
 
-```rust
+```rust,skt-var-mean
 fn variance_mean(data: &[f64], mean: f64) -> f64 {
     let mut sum = 0.;
 
@@ -308,7 +308,7 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 
 # Functional or Imperative
 
-```rust
+```rust,skt-var-mean
 fn variance_mean(data: &[f64], mean: f64) -> f64 {
     data.into_iter()
         .map(|d| (d - mean).powf(2.0))
@@ -328,7 +328,7 @@ machine code (I checked).
 Type that represents one possibility of several variants. Variants may optionally
 carry data.
 
-```rust
+```rust,skt-type-demo
 enum SerialProtocol {
     Usb,
     Rs485,
@@ -344,7 +344,7 @@ enum SerialProtocol {
 
 Type that carries structured data.
 
-```rust
+```rust,skt-serial
 struct Person {
     name: String,
     age: i32,
@@ -361,7 +361,7 @@ Instead of `nil`/`NULL` we have `Option`.
 * Used to represent something that may be absent.
 * An enum that that looks like this:
 
-```rust
+```rust,skt-type-demo
 enum Option<T> {
     Some(T),
     None
@@ -377,7 +377,7 @@ When something can succeed or fail with an error.
 * There are no exceptions in Rust, `Result` is how you handle errors.
 * An enum that that looks like this:
 
-```rust
+```rust,skt-type-demo
 enum Result<T, E> {
     Ok(T),
     Err(E)

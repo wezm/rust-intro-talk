@@ -88,9 +88,12 @@
     </script>
     <script>
       var slideshow = remark.create({
-        sourceUrl: 'slides.md',
-        highlightStyle: 'tomorrow-night',
         ratio: '16:9',
+        sourceUrl: 'slides.md',
+        navigation: {
+          scroll: false
+        },
+        highlightStyle: 'tomorrow-night',
         countIncrementalSlides: false,
       });
     </script>
