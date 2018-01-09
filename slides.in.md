@@ -314,6 +314,8 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 }
 ```
 
+Code from [hydromath] crate by Andrew MacDonald.
+
 ---
 
 # Functional or Imperative
@@ -444,3 +446,4 @@ Credits
 [all-the-things]: https://hyperboleandahalf.blogspot.com.au/2010/06/this-is-why-ill-never-be-adult.html
 [fearless-concurrency]: https://doc.rust-lang.org/book/second-edition/ch16-00-concurrency.html
 [redox]: https://www.redox-os.org/
+[hydromath]: https://github.com/amacd31/hydromath_rs
