@@ -1,29 +1,19 @@
 # Rust Introduction Talk
 
-## TODO
-
-Add explanation of what we're building
-
-```
-$ filetype src/main.rs somefile.rb
-Rust: src/main.rs
-Ruby: src/somefile.rb
-``` 
-
 ## Wes Notes
 
 ### Set Up
 
 #### Displays
 
-Configure screen:
+1. Configure screen:
 
-    xrandr --addmode eDP-1 1360x768 # if needed
-    xrandr --output eDP-1 --set audio force-dvi --mode 1360x768
-    xrandr --output DP-1 --set audio force-dvi --mode 1360x768
+        xrandr --addmode eDP-1 1360x768 # if needed
+        xrandr --output eDP-1 --set audio force-dvi --mode 1360x768
+        xrandr --output DP-1 --set audio force-dvi --mode 1360x768
 
-Disable notifications.
-`simplescreenrecorder` running.
+2. Disable notifications.
+3. `simplescreenrecorder` running.
 
 #### Neovim
 
@@ -31,10 +21,17 @@ Disable notifications.
 
 #### Tilix
 
-Start terminal in Presentation profile, `cd` to talk directory.
+1. Start terminal in Presentation profile, `cd` to talk directory.
+2. Serve slides in another session: `basic-http-server`.
 
 #### Firefox
 
-Open documentation in tab:
+1. [Open slides](http://127.0.0.1:4000/slides.html) in new window.
+2. Open documentation in tab: `rustup doc`.
+3. `f` to fullscreen the slides, Start simplescreenrecorder recording
 
-    rustup doc
+### Presentation
+
+#### Run with source files
+
+    cargo run -- `fd -t f`

@@ -326,6 +326,24 @@ Demo
 
 ---
 
+Demo
+====
+
+Small tool that will determine a file's type from its extension:
+
+```shell
+filetype src/main.rs somefile.rb
+```
+
+Should give output like:
+
+```
+Rust: src/main.rs
+Ruby: src/somefile.rb
+```
+
+---
+
 class: center, middle
 
 Questions?

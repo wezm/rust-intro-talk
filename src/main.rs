@@ -4,9 +4,11 @@ use std::fmt;
 
 #[derive(PartialEq, Eq, Debug)]
 enum FileType {
-    Coffee,
-    JavaScript,
+    Gif,
     Html,
+    JavaScript,
+    Markdown,
+    Png,
     Rust,
     Toml,
     Unknown,
@@ -15,9 +17,10 @@ enum FileType {
 impl fmt::Display for FileType {
     fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
         let symbol = match *self {
-            FileType::Coffee => "",
-            FileType::JavaScript => "",
+            FileType::Gif | FileType::Png => "",
             FileType::Html => "",
+            FileType::JavaScript => "",
+            FileType::Markdown => "",
             FileType::Rust => "",
             FileType::Toml => "",
             FileType::Unknown => ""
@@ -29,11 +32,13 @@ impl fmt::Display for FileType {
 
 fn classify(path: &Path) -> FileType {
     match path.extension().and_then(|ext| ext.to_str()) {
-        Some("coffee")             => FileType::Coffee,
         Some("js")                 => FileType::JavaScript,
         Some("html") | Some("htm") => FileType::Html,
         Some("rs")                 => FileType::Rust,
         Some("toml")               => FileType::Toml,
+        Some("md")                 => FileType::Markdown,
+        Some("png")                => FileType::Png,
+        Some("gif")                => FileType::Gif,
         Some(_)                    => FileType::Unknown,
         None                       => FileType::Unknown,
     }
