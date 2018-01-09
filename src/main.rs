@@ -69,7 +69,7 @@ fn test_file_type_html() {
 
 #[test]
 fn test_file_type_unknown() {
-    assert_eq!(classify(Path::new("README.md")), FileType::Unknown);
+    assert_eq!(classify(Path::new("README.xxx")), FileType::Unknown);
 }
 
 #[test]
