@@ -37,11 +37,23 @@ fn main() {
 
 # Runs Blazingly Fast
 
-* Complies to native code
-* Same ballpark as C and C++
-* Memory saftey without garbage collection
-* Strong, statically typed lanuage with an emphasis on saftey and correctness
-* No runtime
+* Complies to native code.
+
+--
+
+* Same ballpark as C and C++.
+
+--
+
+* Memory safety without garbage collection.
+
+--
+
+* Strong, statically typed language with an emphasis on safety and correctness.
+
+--
+
+* No runtime.
 
 ---
 
@@ -62,18 +74,26 @@ This is not a thing. At all. Ever.
 # Guarantees Thread Safety
 
 * Ownership model tracks owner and lifetime of memory.
+
+--
+
 * No data races: Compiler knows which thread owns what data.
+
+--
+
 * This leads to, "Fearless Concurrency".
 
 ---
 
+class: refactor
+
 # Strong Static Type System
 
-* Do more at compile time, so fewer checks required at run time
+* Do more at compile time so fewer tests and runtime checks are required.
 
 --
 
-* Concepts mostly the same as other languages. No need to learn an entirely new paradigm.
+* Concepts mostly familiar. No need to learn an entirely new paradigm.
 
 --
 
@@ -81,12 +101,13 @@ This is not a thing. At all. Ever.
 
 --
 
-* Type inference reduces the need to specifiy types.
-  * Function definitions must have types makes reading and understanding code easier.
+* Type inference reduces the need to provide type annotations.
 
 --
 
 * Refactor with impunity.
+--
+![REFACTOR ALL THE THINGS](images/refactor-all-the-things.jpg)
 
 ---
 
@@ -94,21 +115,38 @@ This is not a thing. At all. Ever.
 
 Official distribution includes:
 
-* `cargo`
-  * build tool (no Makefiles)
-  * package manager (like bundler)
-  * test runner
-  * documentation generator
+`cargo`
+--
+:
+
+* build tool (no Makefiles)
+
+--
+
+* package manager (like bundler)
+
+--
+
+* test runner
+
+--
+
+* documentation generator
 
 ---
 
 ## Releases
 
-Generally managed with `rustup`:
+Generally managed with `rustup`
+--
+:
 
 * Official toolchain manager (like rbenv)
+
+--
+
 * New releases every 6 weeks
-  * Commited to backwards compatibility for every release.
+  * Committed to backwards compatibility for every release.
 
 ---
 
@@ -180,18 +218,12 @@ Can match structure and values:
 let month = "jan";
 
 match month {
-    "jan" => 1,
-    "feb" => 2,
-    "mar" => 3,
-    "apr" => 4,
-    "may" => 5,
-    "jun" => 6,
-    "jul" => 7,
-    "aug" => 8,
-    "sep" => 9,
-    "oct" => 10,
-    "nov" => 11,
-    "dec" => 12,
+    "jan" => 1,  "feb" => 2,
+    "mar" => 3,  "apr" => 4,
+    "may" => 5,  "jun" => 6,
+    "jul" => 7,  "aug" => 8,
+    "sep" => 9,  "oct" => 10,
+    "nov" => 11, "dec" => 12,
     _     => panic!("invalid month"),
 };
 
@@ -212,6 +244,14 @@ for i in numbers.iter() {
 for i in 0..10 {
     // do something
 }
+```
+
+---
+
+# Loops
+
+```rust,skt-basic-main
+let numbers = [1,2,3];
 
 loop {
     // do something
@@ -228,7 +268,7 @@ while numbers.len() < 2 {
 
 ---
 
-# Functional or imperative
+# Functional or Imperative
 
 You pay _no cost_ for using the higher level style.
 
@@ -244,7 +284,11 @@ fn variance_mean(data: &[f64], mean: f64) -> f64 {
 }
 ```
 
-compiles the identical machine code (I checked) as:
+---
+
+# Functional or Imperative
+
+Compiles the identical machine code (I checked) as:
 
 ```rust,skt-var-mean
 fn variance_mean(data: &[f64], mean: f64) -> f64 {
@@ -289,7 +333,7 @@ struct Person {
 
 # Option
 
-Insead of `nil`/`NULL` we have `Option`.
+Instead of `nil`/`NULL` we have `Option`.
 
 * Used to represent something that may be absent.
 * An enum that that looks like this:
@@ -305,9 +349,9 @@ enum Option<T> {
 
 # Result
 
-When something can succeed or fail with an error. There are no exceptions in
-Rust, `Result` is how you handle errors.
+When something can succeed or fail with an error.
 
+* There are no exceptions in Rust, `Result` is how you handle errors.
 * An enum that that looks like this:
 
 ```rust,skt-type-demo
@@ -354,10 +398,12 @@ Questions?
 Credits
 =======
 
-* Portions of this talk were derived from [A Very Brief Intro to Rust][rust-intro]  
-  Copyright (c) 2016 Ashley Williams
 * [Animated Ferris][animated-ferris] by A. L. Palmer, via [rustacean.net][rustacean].
+* Original [All the Things][all-the-things] illustration by Allie Brosh
+* Portions of this talk were derived from [A Very Brief Intro to Rust][rust-intro]  
+  Copyright © 2016 Ashley Williams.
 
 [rust-intro]: https://github.com/rustbridge/a-very-brief-intro-to-rust
 [animated-ferris]: https://www.behance.net/gallery/42774743/Rustacean
 [rustacean]: http://rustacean.net/
+[all-the-things]: https://hyperboleandahalf.blogspot.com.au/2010/06/this-is-why-ill-never-be-adult.html
