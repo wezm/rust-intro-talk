@@ -42,7 +42,7 @@ fn main() {
 --
 
 * Aims to solve the same sorts of problems that C and C++ are used to solve but
-  with improved saftey.
+  with improved safety.
 
 --
 
@@ -74,7 +74,7 @@ fn main() {
 
 --
 
-* Similar performance as C and C++.
+* Similar performance to C and C++.
 
 --
 
@@ -106,7 +106,7 @@ This is not a thing. At all. Ever.
 
 # Guarantees Thread Safety
 
-* Strong, statically typed with an emphasis on safety and correctness.
+* Strongly, statically typed with an emphasis on safety and correctness.
 
 --
 
@@ -196,10 +196,24 @@ class: crates
 # Crates
 
 * Rust favours a small, stable standard library.
-* Crates are the equivalient of Ruby gems. They are published to
+* Crates are the equivalent of Ruby gems. They are published to
   [crates.io](https://crates.io/).
 
 ![screenshot of crates.io](images/crates-io.png)
+
+---
+
+# Community and Direction
+
+* RFC process.
+
+--
+
+* Systematic improvement.
+
+--
+
+* Emphasis on inclusion and building a friendly community.
 
 ---
 
@@ -213,12 +227,12 @@ Concepts
 # Functions
 
 ```rust
-fn average(values: &[i32]) -> i32 {
-    values.iter().sum::<i32>() / values.len() as i32
+fn add(left: i32, right: i32) -> i32 {
+    left + right
 }
 
 fn main() {
-    average(&[1, 2, 3, 4, 5]);
+    let sum = add(2, 3);
 }
 ```
 
@@ -227,14 +241,13 @@ fn main() {
 # Conditionals: if
 
 ```rust
-let air_conditioner;
-let temperature: i32 = 42;
+let temperature: i32 = 29;
 
-if temperature > 35 {
-    air_conditioner = true;
+if temperature > 25 {
+    println!("Wesley is happy");
 }
 else {
-    air_conditioner = false;
+    println!("Too cold");
 }
 ```
 
@@ -322,7 +335,7 @@ carry data.
 
 ```rust
 enum SerialProtocol {
-    Usb(u8),
+    Usb,
     Rs485,
     Rs232,
     I2C,
@@ -342,6 +355,12 @@ struct Person {
     age: i32,
     favourite_serial_protocol: SerialProtocol,
 }
+
+impl Person {
+    fn name_and_age(&self) -> String {
+        format!("{} is {} years old", self.name, self.age)
+    }
+}
 ```
 
 ---
@@ -351,7 +370,6 @@ struct Person {
 Instead of `nil`/`NULL` we have `Option`.
 
 * Used to represent something that may be absent.
-* An enum that that looks like this:
 
 ```rust
 enum Option<T> {
@@ -367,7 +385,6 @@ enum Option<T> {
 When something can succeed or fail with an error.
 
 * There are no exceptions in Rust, `Result` is how you handle errors.
-* An enum that that looks like this:
 
 ```rust
 enum Result<T, E> {

@@ -29,10 +29,22 @@ Prevents Segfaults
 * Tony Hoare (no relation too Graydon) implemented NULL in Algol in 1965 simply
   because it was easy.  He now calls it his billion dollar mistake.
 
+Conditionals: if
+----------------
+
+* Here we see a let binding (variable)
+* Variables are immutable by default
+
 Functional or Imperative
 ------------------------
 
 * This is an example of the zerro cost abstractions I mentioned earlier.
+
+Result
+------
+
+* No exceptions, Result has a bunch of associated functions to make
+  dealing with them ergonomic.
 
 Demo
 ----
