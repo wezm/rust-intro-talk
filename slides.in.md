@@ -1,7 +1,7 @@
 class: center, middle, ferris
 
-Rust Introduction
-=================
+Introduction to Rust
+====================
 
 Wesley Moore
 ------------
@@ -78,6 +78,10 @@ fn main() {
 --
 
 * No runtime.
+
+--
+
+* Zero cost abstractions.
 
 ---
 
@@ -201,17 +205,6 @@ Concepts
 
 ---
 
-# Variables (Bindings)
-
-`let` bindings are immutable by default.
-
-```rust,skt-basic-main
-let number = 42; // immutable
-let mut total = 0; // mutable
-```
-
----
-
 # Functions
 
 ```rust
@@ -278,25 +271,7 @@ for i in 0..10 {
 }
 ```
 
----
-
-# Loops
-
-```rust,skt-basic-main
-let numbers = [1, 2 ,3];
-
-loop {
-    // do something
-
-    if numbers.len() > 2 {
-      break;
-    }
-}
-
-while numbers.len() < 2 {
-    // do something
-}
-```
+Also less frequently used commonly used `loop` and `while`.
 
 ---
 
@@ -342,7 +317,7 @@ carry data.
 
 ```rust,skt-type-demo
 enum SerialProtocol {
-    Usb,
+    Usb(u8),
     Rs485,
     Rs232,
     I2C,
