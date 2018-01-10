@@ -64,12 +64,17 @@ fn main() {
 
 # Runs Blazingly Fast
 
+![Benchmarks Chart](images/benchmarks.png)
+
+---
+
+# Runs Blazingly Fast
+
 * Native code, no interpreter.
 
 --
 
 * Similar performance as C and C++.
-  * Sometimes a bit faster, sometimes a bit slower.
 
 --
 
@@ -414,6 +419,8 @@ Credits
 * Original [All the Things][all-the-things] illustration by Allie Brosh
 * Portions of this talk were derived from [A Very Brief Intro to Rust][rust-intro]  
   Copyright © 2016 Ashley Williams.
+* Benchmarks chart generated from data on [The Computer Language
+  Benchmarks Game][benchmarks] on 10 Jan 2018.
 
 [rust-intro]: https://github.com/rustbridge/a-very-brief-intro-to-rust
 [animated-ferris]: https://www.behance.net/gallery/42774743/Rustacean
@@ -422,3 +429,4 @@ Credits
 [fearless-concurrency]: https://doc.rust-lang.org/book/second-edition/ch16-00-concurrency.html
 [redox]: https://www.redox-os.org/
 [hydromath]: https://github.com/amacd31/hydromath_rs
+[benchmarks]: https://benchmarksgame.alioth.debian.org/
