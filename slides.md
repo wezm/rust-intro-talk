@@ -140,7 +140,7 @@ class: refactor
 
 --
 
-* Refactor with impunity.
+* Refactor with impunity — even in large code bases.
 --
 ![REFACTOR ALL THE THINGS](images/refactor-all-the-things.jpg)
 
