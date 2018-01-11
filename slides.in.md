@@ -120,8 +120,6 @@ This is not a thing. At all. Ever.
 
 ---
 
-class: refactor
-
 # Strong Static Type System
 
 * Do more at compile time so fewer tests and runtime checks are required.
@@ -141,8 +139,6 @@ class: refactor
 --
 
 * Refactor with impunity — even in large code bases.
---
-![REFACTOR ALL THE THINGS](images/refactor-all-the-things.jpg)
 
 ---
 
@@ -425,7 +421,6 @@ Credits
 =======
 
 * [Animated Ferris][animated-ferris] by A. L. Palmer, via [rustacean.net][rustacean].
-* Original [All the Things][all-the-things] illustration by Allie Brosh
 * Portions of this talk were derived from [A Very Brief Intro to Rust][rust-intro]  
   Copyright © 2016 Ashley Williams.
 * Benchmarks chart generated from data on [The Computer Language
@@ -434,7 +429,6 @@ Credits
 [rust-intro]: https://github.com/rustbridge/a-very-brief-intro-to-rust
 [animated-ferris]: https://www.behance.net/gallery/42774743/Rustacean
 [rustacean]: http://rustacean.net/
-[all-the-things]: https://hyperboleandahalf.blogspot.com.au/2010/06/this-is-why-ill-never-be-adult.html
 [fearless-concurrency]: https://doc.rust-lang.org/book/second-edition/ch16-00-concurrency.html
 [redox]: https://www.redox-os.org/
 [hydromath]: https://github.com/amacd31/hydromath_rs
