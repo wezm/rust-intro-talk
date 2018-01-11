@@ -50,7 +50,7 @@ fn main() {
 
 --
 
-  * Embedded systems (microcontrollers)
+  * Web (front and backend)
 
 --
 
@@ -58,7 +58,7 @@ fn main() {
 
 --
 
-  * Web (front and backend)
+  * Embedded systems (microcontrollers)
 
 ---
 
@@ -70,19 +70,11 @@ fn main() {
 
 # Runs Blazingly Fast
 
-* Native code, no interpreter.
-
---
-
-* Similar performance to C and C++.
+* No interpreter, no runtime.
 
 --
 
 * Memory safety without garbage collection.
-
---
-
-* No runtime.
 
 --
 
@@ -94,7 +86,7 @@ class: segfaults
 
 # Prevents Segfaults
 
-* No `NULL`, `nil` or other [billion dollar mistakes][billion-dollar-mistake].
+* No `nil`, `NULL` or other [billion dollar mistakes][billion-dollar-mistake].
 
 ![undefined method for nil:NilClass](images/undefined-method-nil.png)
 
@@ -367,7 +359,7 @@ impl Person {
 
 # Option
 
-Instead of `nil`/`NULL` we have `Option`.
+Instead of `nil` and `NULL` there is `Option`.
 
 * Used to represent something that may be absent.
 
